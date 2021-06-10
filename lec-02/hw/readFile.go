@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Get string slice from file
 func readFile() []string {
 	data, err := ioutil.ReadFile("text.txt")
 	if err != nil {
@@ -18,6 +19,7 @@ func readFile() []string {
 	return s
 }
 
+// Get number slice from string
 func getNumbers() []int {
 	s := readFile()
 	results := []int{}
@@ -31,6 +33,7 @@ func getNumbers() []int {
 	return results
 }
 
+// Find min max from number slice
 func findMinMax(sl []int) (int, int) {
 	var max int = sl[0]
 	var min int = sl[0]
@@ -45,6 +48,7 @@ func findMinMax(sl []int) (int, int) {
 	return min, max
 }
 
+// Get average value from number slice
 func getAverage(sl []int) int {
 	sum := int(0)
 	for _, v := range sl {
@@ -53,6 +57,7 @@ func getAverage(sl []int) int {
 	return sum / len(sl)
 }
 
+// Check if a given number is prime
 func isPrime(n int) bool {
 	for i := 2; i < n; i++ {
 		if n%i == 0 {
@@ -62,6 +67,7 @@ func isPrime(n int) bool {
 	return n > 1
 }
 
+// Check if a given number exists in slice
 func doExist(n int, sl []int) bool {
 	for k, v := range sl {
 		if v == n {
