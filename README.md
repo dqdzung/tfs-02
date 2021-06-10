@@ -9,9 +9,7 @@
 ```
 ├── lec-01
 ├── lec-02
-├── lec-03
 │   ├── class
-│   │   ├── bubbleSort.go
 │   │   ├── calc.go
 │   │   ├── fibonacci.go
 │   │   └── server.go
@@ -19,6 +17,6 @@
 │   │   ├── calcAPI.go
 │   │   ├── data.json
 │   │   ├──
-│   │   └──
+│   │   └── README.md
 └── README.md
 ```

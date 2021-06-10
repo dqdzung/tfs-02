@@ -1,5 +1,6 @@
-# Repository's info
+# Directory's tree
 
-| Fullname        | Class    |
-| --------------- | -------- |
-| Đinh Quang Dũng | TFS - 02 |
+├── bubbleSort.go
+├── calcAPI.go
+├── data.json
+└── README.md
