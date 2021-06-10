@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"strconv"
@@ -32,7 +33,6 @@ func getNumbers() []int {
 	}
 	return results
 }
-
 
 // Find min max from number slice
 func findMinMax(sl []int) (int, int) {
@@ -80,6 +80,13 @@ func doExist(n int, sl []int) bool {
 	return false
 }
 
+type Results struct {
+	Nums    []int `json:"nums"`
+	Max     int   `json:"max"`
+	Min     int   `json:"min"`
+	Average int   `json:"average"`
+	Primes  []int `json:"primes"`
+}
 
 func main() {
 	nums := getNumbers()
@@ -102,4 +109,15 @@ func main() {
 
 	doExist(42, nums)
 	doExist(69, nums)
+
+	res := Results{
+		Nums:    nums,
+		Max:     max,
+		Min:     min,
+		Average: avg,
+		Primes:  primes,
+	}
+
+	file, _ := json.Marshal(&res)
+	_ = ioutil.WriteFile("results.json", file, 0644)
 }
