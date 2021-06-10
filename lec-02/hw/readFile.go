@@ -69,7 +69,7 @@ func isPrime(n int) bool {
 }
 
 // Check if a given number exists in slice
-func doExist(n int, sl []int) bool {
+func DoExist(n int, sl []int) bool {
 	for k, v := range sl {
 		if v == n {
 			fmt.Printf("Found number %v at position %v\n", v, k)
@@ -90,13 +90,13 @@ type Results struct {
 
 func main() {
 	nums := getNumbers()
-	fmt.Println("Nums:", nums)
+	// fmt.Println("Nums:", nums)
 
 	min, max := findMinMax(nums)
-	fmt.Printf("Min: %v\nMax: %v\n", min, max)
+	// fmt.Printf("Min: %v\nMax: %v\n", min, max)
 
 	avg := getAverage(nums)
-	fmt.Println("Average:", avg)
+	// fmt.Println("Average:", avg)
 
 	primes := []int{}
 	for _, v := range nums {
@@ -105,10 +105,10 @@ func main() {
 			primes = append(primes, v)
 		}
 	}
-	fmt.Println("Primes:", primes)
+	// fmt.Println("Primes:", primes)
 
-	doExist(42, nums)
-	doExist(69, nums)
+	DoExist(42, nums)
+	DoExist(69, nums)
 
 	res := Results{
 		Nums:    nums,
@@ -118,6 +118,7 @@ func main() {
 		Primes:  primes,
 	}
 
+	//Write to results.json
 	file, _ := json.Marshal(&res)
 	_ = ioutil.WriteFile("results.json", file, 0644)
 }
