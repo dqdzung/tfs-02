@@ -43,6 +43,6 @@ func handleQuery(res http.ResponseWriter, req *http.Request) {
 func main() {
 	fmt.Println("Server started!")
 	http.HandleFunc("/hello", sayHello)
-	http.HandleFunc("/calc", handleQuery)
+	http.HandleFunc("/query", handleQuery)
 	http.ListenAndServe(":8090", nil)
 }
