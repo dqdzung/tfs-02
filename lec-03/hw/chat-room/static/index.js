@@ -1,10 +1,19 @@
-const name = document.querySelector(".name");
-const message = document.querySelector("#message-input");
-const nameInput = document.querySelector("#name-input");
-const content = document.querySelector(".content");
-const sendBtn = document.querySelector(".send-btn");
-const chatForm = document.querySelector(".chat-form");
-const counter = document.querySelector("#counter");
+const name = document.querySelector(".name"),
+	message = document.querySelector("#message-input"),
+	nameInput = document.querySelector("#name-input"),
+	content = document.querySelector(".content"),
+	sendBtn = document.querySelector(".send-btn"),
+	chatForm = document.querySelector(".chat-form"),
+	counter = document.querySelector("#counter");
+
+let messageCount = 0;
+
+message.onkeyup = (e) => {
+	if (e.target.value.length) {
+		counter.innerHTML = "160/160";
+	}
+	counter.innerHTML = `${160 - e.target.value.length}/160`;
+};
 
 chatForm.onsubmit = (e) => {
 	e.preventDefault();
@@ -22,6 +31,7 @@ chatForm.onsubmit = (e) => {
 	});
 
 	message.value = "";
+	messageCount++;
 	renderMessage();
 };
 
@@ -43,11 +53,4 @@ const renderMessage = async () => {
 const getMessage = async () => {
 	const res = await fetch("http://localhost:8080/message");
 	return res.json();
-};
-
-message.onkeyup = (e) => {
-	if (e.target.value.length) {
-		counter.innerHTML = "160/160";
-	}
-	counter.innerHTML = `${160 - e.target.value.length}/160`;
 };
