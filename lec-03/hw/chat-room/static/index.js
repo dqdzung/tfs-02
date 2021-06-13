@@ -54,3 +54,15 @@ const getMessage = async () => {
 	const res = await fetch("http://localhost:8080/message");
 	return res.json();
 };
+
+const getDataInterval = () => {
+	setInterval(async () => {
+		const res = await getMessage();
+		if (res.length != messageCount) {
+			console.log("new message");
+			renderMessage();
+		}
+	}, 3000);
+};
+
+getDataInterval();
