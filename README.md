@@ -19,5 +19,18 @@
 │   │   ├── readFile.go
 │   │   ├── text.txt
 │   │   └── README.md
+├── lec-03
+│   ├── class
+│   │   └── Pure JS Calculator
+│   │       ├── index.html
+│   │       ├── index.js
+│   │       └── style.css
+│   └── hw
+│       └── chat-room
+│           ├── static
+│           │   ├── index.html
+│           │   ├── index.js
+│           │   └── style.css
+│           └── main.go
 └── README.md
 ```
