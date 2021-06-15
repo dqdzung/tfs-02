@@ -13,12 +13,12 @@
 │   │   ├── calc.go
 │   │   ├── fibonacci.go
 │   │   └── server.go
-│   ├── hw
-│   │   ├── bubbleSort.go
-│   │   ├── calcAPI.go
-│   │   ├── readFile.go
-│   │   ├── text.txt
-│   │   └── README.md
+│   └── hw
+│       ├── bubbleSort.go
+│       ├── calcAPI.go
+│       ├── readFile.go
+│       ├── text.txt
+│       └── README.md
 ├── lec-03
 │   ├── class
 │   │   └── Pure JS Calculator
@@ -32,5 +32,17 @@
 │           │   ├── index.js
 │           │   └── style.css
 │           └── main.go
+├── lec-04
+│   ├── class
+│   │   └── fib.go
+│   ├── hw
+│   │   └── crawling
+│   │       ├── crawler
+│   │       │    └── crawler.go
+│   │       ├── storage
+│   │       │    └── storage.go
+│   │       └── main.go
+│   ├── go.mod
+│   └── go.sum
 └── README.md
 ```

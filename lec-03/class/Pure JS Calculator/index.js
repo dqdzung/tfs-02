@@ -1,5 +1,4 @@
 let current;
-let prev;
 let result;
 
 const resultDisplay = document.querySelector(".result");
@@ -33,7 +32,6 @@ const handleOpClick = (e) => {
 	if (prevNumDisplay.innerText) {
 		compute();
 	}
-	prev = Number(resultDisplay.innerText);
 	prevNumDisplay.innerText = resultDisplay.innerText + " " + operation;
 	resultDisplay.innerText = "";
 };

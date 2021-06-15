@@ -60,6 +60,7 @@ const getDataInterval = () => {
 		const res = await getMessage();
 		if (res.length != messageCount) {
 			console.log("new message");
+			messageCount = res.length;
 			renderMessage();
 		}
 	}, 3000);
